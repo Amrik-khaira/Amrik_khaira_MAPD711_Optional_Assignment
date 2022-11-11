@@ -21,7 +21,7 @@ class CategoryListViewModel  : ViewModel(){
                 if (response.isSuccessful) {
                     response.body()?.let {
                         val jsonObject = JSONObject(it.string())
-
+                        categoryList.clear()
                         var item: JSONObject
                         for (index in 0 until jsonObject.getJSONArray("products").length()) {
                             item = jsonObject.getJSONArray("products").getJSONObject(index)

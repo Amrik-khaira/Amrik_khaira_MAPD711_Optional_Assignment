@@ -50,7 +50,7 @@ class CategoryListAdapter(private val context: Context, private val itemSelectLi
             view.findViewById<TextView>(R.id.categoryBrandNameText).text = product.brand
             view.findViewById<TextView>(R.id.categoryRating).text = product.rating.toString()
             view.findViewById<TextView>(R.id.categoryDetail).text = product.description
-            Log.d(" product.title",""+ product.title.toString());
+           // Log.d(" product.title",""+ product.title.toString());
             view.findViewById<TextView>(R.id.viewAll).setOnClickListener {
                 itemSelectListener.onItemSelect(product)
             }
