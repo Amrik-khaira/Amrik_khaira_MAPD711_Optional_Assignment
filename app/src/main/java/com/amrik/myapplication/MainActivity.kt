@@ -1,6 +1,7 @@
 package com.amrik.myapplication
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
@@ -38,6 +39,13 @@ class MainActivity : AppCompatActivity() {
             CategoryListAdapter(context = this,
                 itemSelectListener = object : ItemSelectListener {
                     override fun onItemSelect(item: Any) {
+                        var product = item as Product
+                        val intent = Intent(applicationContext, DetailActivity::class.java)
+                       intent.putExtra("title",product.title)
+                       intent.putExtra("brand",product.brand)
+                       intent.putExtra("rating",product.rating)
+                       intent.putExtra("description",product.description)
+                        startActivity(intent)
 
                     }
                 }
