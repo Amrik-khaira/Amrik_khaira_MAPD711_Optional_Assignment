@@ -2,17 +2,18 @@ package com.amrik.myapplication.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.amrik.myapplication.listener.ItemSelectListener
 import com.amrik.myapplication.Product
 import com.amrik.myapplication.R
+import com.amrik.myapplication.listener.ItemSelectListener
+import com.squareup.picasso.Picasso
 
 
 class CategoryListAdapter(private val context: Context, private val itemSelectListener: ItemSelectListener,
@@ -46,11 +47,13 @@ class CategoryListAdapter(private val context: Context, private val itemSelectLi
         @SuppressLint("SetTextI18n")
 
         fun onBind(product: Product) {
-           view. findViewById<TextView>(R.id.categoryName).text = product.title
+            view. findViewById<TextView>(R.id.categoryName).text = product.title
             view.findViewById<TextView>(R.id.categoryBrandNameText).text = product.brand
             view.findViewById<TextView>(R.id.categoryRating).text = product.rating.toString()
             view.findViewById<TextView>(R.id.categoryDetail).text = product.description
-           // Log.d(" product.title",""+ product.title.toString());
+            var categoryImage =  view.findViewById<ImageView>(R.id.categoryImage)
+            Picasso.with(context).load(product.thumbnail).into(categoryImage)
+            // Log.d(" product.title",""+ product.title.toString());
             view.findViewById<TextView>(R.id.viewAll).setOnClickListener {
                 itemSelectListener.onItemSelect(product)
             }
@@ -67,4 +70,3 @@ class CategoryListAdapter(private val context: Context, private val itemSelectLi
         }
     }
 }
-

@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.title = "List Activity"
         viewModel = ViewModelProvider(this).get(CategoryListViewModel::class.java)
         initUi()
 
@@ -30,7 +31,6 @@ class MainActivity : AppCompatActivity() {
     }
     private fun initUi() {
         recyclerView = findViewById(R.id.rv_category)
-        setAdapter()
         getCategoryList()
     }
     @SuppressLint("NotifyDataSetChanged")
@@ -41,10 +41,11 @@ class MainActivity : AppCompatActivity() {
                     override fun onItemSelect(item: Any) {
                         var product = item as Product
                         val intent = Intent(applicationContext, DetailActivity::class.java)
-                       intent.putExtra("title",product.title)
-                       intent.putExtra("brand",product.brand)
-                       intent.putExtra("rating",product.rating)
-                       intent.putExtra("description",product.description)
+                        intent.putExtra("title",product.title)
+                        intent.putExtra("brand",product.brand)
+                        intent.putExtra("rating",product.rating)
+                        intent.putExtra("description",product.description)
+                        intent.putExtra("images",product.images)
                         startActivity(intent)
 
                     }
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
     private fun getCategoryList() {
         viewModel.getAllCategory(object : SuccessListener {
             override fun onSuccess(obj: Any) {
-
+                setAdapter()
 
             }
         }, object : FailureListener {

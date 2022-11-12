@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="220dp"
+    android:layout_margin="10dp"
     android:background="@color/cardview_dark_background"
     app:cardBackgroundColor="@color/cardview_dark_background"
     app:cardCornerRadius="20dp"
-    app:cardElevation="2dp"
-  android:layout_margin="10dp">
+    app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,68 +17,78 @@
             android:id="@+id/categoryName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:padding="8dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <ImageView
             android:id="@+id/categoryImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/categoryBrandNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="8dp"
             android:textColor="@color/white"
             android:textSize="14sp"
-            android:padding="8dp"
             android:textStyle="normal|italic"
-            app:layout_constraintTop_toBottomOf="@id/categoryName"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categoryName" />
 
 
         <TextView
             android:id="@+id/categoryRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawableRight="@drawable/ic_star"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:padding="8dp"
             android:textColor="@color/white"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:padding="8dp"
-            app:layout_constraintTop_toBottomOf="@id/categoryBrandNameText"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categoryBrandNameText" />
 
         <TextView
             android:id="@+id/categoryDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="8dp"
             android:text=""
             android:textColor="@color/white"
             android:textSize="14sp"
             android:textStyle="normal"
-            android:padding="8dp"
-            app:layout_constraintTop_toBottomOf="@id/categoryRating"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categoryRating" />
 
 
         <TextView
             android:id="@+id/viewAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="8dp"
             android:text="View Details"
             android:textColor="@color/white"
             android:textSize="14sp"
             android:textStyle="bold|italic"
-            android:padding="8dp"
-            app:layout_constraintTop_toBottomOf="@id/categoryDetail"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categoryDetail" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

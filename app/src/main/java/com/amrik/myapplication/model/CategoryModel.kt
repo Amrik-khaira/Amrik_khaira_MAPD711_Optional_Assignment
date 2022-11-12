@@ -1,4 +1,5 @@
 package  com.amrik.myapplication
+
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 @Parcelize
@@ -21,5 +22,5 @@ data class Product (
     var brand: String="",
     var category: String="",
     var thumbnail: String="",
-   // val images:ArrayList<String>
+    val images:ArrayList<String>
 ) : Parcelable
